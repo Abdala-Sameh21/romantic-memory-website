@@ -36,8 +36,10 @@ function changeText() {
 
 let textInterval = setInterval(changeText, 3000);
 
+// دالة الدخول والتحقق من كلمة السر
 function enterWebsite() {
-  const inputPassword = document.getElementById("passInput").value;
+  const inputElement = document.getElementById("passInput");
+  const inputPassword = inputElement ? inputElement.value.trim() : "";
 
   if (inputPassword === "الفرس") {
     clearInterval(textInterval);
@@ -54,8 +56,17 @@ function enterWebsite() {
         console.log("Autoplay blocked:", error);
       });
     }, 800);
+  } else if (inputPassword === "") {
+    alert("من فضلك أدخل كلمة السر أولاً!");
   } else {
     alert("كلمة السر غير صحيحة، حاول مرة أخرى!");
+  }
+}
+
+// السماح بالضغط على زر Enter للفي دخول
+function checkKey(event) {
+  if (event.key === "Enter") {
+    enterWebsite();
   }
 }
 

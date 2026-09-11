@@ -1,7 +1,7 @@
 const welcomeTexts = [
-  { main: "Website Kenangan", sub: "Tempat menyimpan cerita kita." },
-  { main: "Untuk Kenangan Indah", sub: "Semua momen spesial tersimpan di sini." },
-  { main: "Untuk Aku dan Kamu", sub: "Terima kasih sudah menjadi bagian dari hidupku." }
+  { main: "موقع الذكريات", sub: "المكان الذي نحفظ فيه قصتنا." },
+  { main: "لأجمل الذكريات", sub: "كل اللحظات المميزة محفوظة هنا." },
+  { main: "من أجلي ومن أجلكِ", sub: "شكراً لأنكِ جزء من حياتي." }
 ];
 
 let textIndex = 0;

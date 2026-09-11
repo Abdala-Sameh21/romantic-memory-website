@@ -37,20 +37,26 @@ function changeText() {
 let textInterval = setInterval(changeText, 3000);
 
 function enterWebsite() {
-  clearInterval(textInterval);
+  const inputPassword = document.getElementById("passInput").value;
 
-  const welcome = document.getElementById("welcomeScreen");
-  const main = document.getElementById("mainContent");
+  if (inputPassword === "الفرس") {
+    clearInterval(textInterval);
 
-  welcome.style.opacity = "0";
-  setTimeout(() => {
-    welcome.style.display = "none";
-    main.classList.add("show-content");
-    audio.volume = 0.5;
-    audio.play().catch(error => {
-      console.log("Autoplay blocked:", error);
-    });
-  }, 800);
+    const welcome = document.getElementById("welcomeScreen");
+    const main = document.getElementById("mainContent");
+
+    welcome.style.opacity = "0";
+    setTimeout(() => {
+      welcome.style.display = "none";
+      main.classList.add("show-content");
+      audio.volume = 0.5;
+      audio.play().catch(error => {
+        console.log("Autoplay blocked:", error);
+      });
+    }, 800);
+  } else {
+    alert("كلمة السر غير صحيحة، حاول مرة أخرى!");
+  }
 }
 
 const startDate = new Date("2023-02-14T00:00:00").getTime();
